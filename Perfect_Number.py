@@ -1,11 +1,9 @@
 n=int(input())
-x=1
-sum=0
-while x<=n//2:
-    if n%x==0:
-        sum+=x
-    x+=1
-if n==sum:
+s=0
+for i in range(1,n//2+1):
+    if n%i==0:
+        s+=i
+if s==n:
     print(True)
 else:
     print(False)
