@@ -1,24 +1,18 @@
-def max_count(a):
+def dig(n):
+    if n==0:
+        return 1
     c=0
-    for i in a:
-        temp=abs(i)
-        m=c
-        c=0
-        while temp!=0:
-            c+=1
-            temp//=10
-        if c<m:
-            c=m
+    if n<0:
+        n=-1*n
+    while n:
+        n=n//10
+        c+=1
     return c
 n=int(input())
 a=list(map(int,input().split()))
-c=max_count(a)
-count=0
-for i in a:
-    temp=abs(i)
-    co=0
-    while temp!=0:
-        co+=1
-        temp//=10
-    if co==c:
-        print(i,end=' ')
+l=[]
+for i in range(n):
+    l.append(dig(a[i]))
+for i in range(n):
+    if dig(a[i])==max(l):
+        print(a[i],end=' ')
