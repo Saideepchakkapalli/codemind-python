@@ -1,15 +1,16 @@
-n,k=map(int,input().split())
-a=list(map(int,input().split()))
-count=0
-for i in a:
-    temp=abs(i)
-    co=0
-    while temp:
-        co+=1
-        temp//=10
-    if i==0:
-        co+=1
-    if co==k:
-        count+=1
-print(count)
-
+def dig(n):
+    c=0
+    if n==0:
+        return 1
+    elif n<0:
+        n = n*-1
+    while(n):
+        n=n//10
+        c+=1
+    return c
+x , y = map(int,input().split())
+l = list(map(int,input().split()))
+a=[]
+for i in range(x):
+   a.append(dig(l[i]))
+print(a.count(y))
