@@ -1,11 +1,15 @@
+def dig(n):
+    if n==0:
+        return 1
+    if n<0:
+        n=n*-1
+    c=0
+    while n:
+        i=n%10
+        n=n//10
+        c+=1
+    return c
 n=int(input())
 a=list(map(int,input().split()))
-for i in a:
-    temp=abs(i)
-    co=0
-    while temp:
-        co+=1
-        temp//=10
-    if i==0:
-        co+=1
-    print(co,end=' ')
+for i in range(n):
+    print(dig(a[i]),end=' ')
