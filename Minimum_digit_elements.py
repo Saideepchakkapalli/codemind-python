@@ -1,25 +1,14 @@
-def min_count(a):
+def dig(n):
     c=0
-    for i in a:
-        temp=i
-        m=c
-        c=0
-        while temp:
-            c+=1
-            temp//=10
-        if c>m and m!=0:
-            c=m
+    while n:
+        i=n%10
+        n=n//10
+        c+=1
     return c
 n=int(input())
 a=list(map(int,input().split()))
-c=min_count(a)
-count=0
-for i in a:
-    temp=i
-    co=0
-    while temp:
-        co+=1
-        temp//=10
-    if co==c:
-        count+=1
-print(count)
+l=[]
+for i in range(n):
+    l.append(dig(a[i]))
+x=min(l)
+print(l.count(x))
