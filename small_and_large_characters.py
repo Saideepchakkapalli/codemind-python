@@ -1,3 +1,5 @@
-s=input().split()
+s = input().split(" ")
 for i in s:
-    print(min(i),max(i),end=' ')
+    print(min(i),max(i),end=" ")
+
+
